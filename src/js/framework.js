@@ -118,8 +118,7 @@
 
 	window.addEventListener('scroll', init);
 	
-	/*
-showFull.addEventListener('click', function() {
+	showFull.addEventListener('click', function() {
 	    window.removeEventListener('scroll', init, false);
     	body.classList.remove('menu-hidden');
     	
@@ -127,7 +126,6 @@ showFull.addEventListener('click', function() {
         	window.addEventListener('scroll', init);
     	}, 2000);
 	});
-*/
 	
 }).call(this);
 

@@ -17,7 +17,14 @@ const cssProd = ExtractTextPlugin.extract({
 */
 
 //const cssConfig = isProd ? cssProd : cssDev;
-
+const minify = {
+     collapseWhitespace: true,
+    removeComments: true,
+    minifyJS: true,
+    minifyURLs: true,
+    removeEmptyAttributes: true,
+    removeScriptTypeAttributes: true,
+}
 
 module.exports = {
     entry: {
@@ -100,7 +107,8 @@ module.exports = {
 		    filename: 'index.html',
 		    cache: false,
     		chunks: ['app'],
-            template: './src/index.html'
+            template: './src/index.html',
+            minify: minify
 		}),
 
 	]

@@ -16,9 +16,9 @@
     }
     
     &__item {
-        width: 240px;
+        //width: 240px;
         min-height: 280px;
-        margin-right: 40px;
+        //margin-right: 40px;
         background-color: white;
         border: 1px solid $c-blue1;
         padding: 20px 30px;
@@ -33,11 +33,15 @@
             line-height: 1;
             font: {
                 family: $cervo-medium;
-                size: get-vw-project(114);
+                size: get-vw-base(114);
+            }
+            
+            @media screen and ( min-width: $base + 1px ) {
+                font-size: rem(114);
             }
             
             @media screen and ( min-width: $withnarrow + 1px ) {
-                font-size: rem(114);
+                //font-size: rem(114);
             }
             
         }

@@ -6,6 +6,11 @@
 	@return ( $target / 16 ) * 1rem;
 }
 
+@function get-vw-base($target) {
+	$vw-context: ($base * 0.01);
+	@return ($target / $vw-context) * 1vw;
+}
+
 @function get-vw-project($target) {
 	$vw-context: ($project * 0.01);
 	@return ($target / $vw-context) * 1vw;
