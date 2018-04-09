@@ -1,0 +1,16 @@
+.c-footer {
+
+    &__content {
+        @extend %flex;
+        @extend %flex-wrap;
+    }
+
+    &__col {
+        width: grid(320, 1120);
+        margin-right: grid(80, 1120);
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

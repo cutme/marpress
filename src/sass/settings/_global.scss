@@ -1,0 +1,39 @@
+// Fonts
+
+$icons:		'icomoon';
+
+$boston-bold:       'Boston-Bold';
+$boston-semibold:   'Boston-SemiBold';
+$cervo-regular:     'Cervo-Regular';
+$cervo-medium:      'Cervo-Medium';
+
+$text:		$boston-semibold;
+
+
+// Font weights
+
+$regular:			400;
+$medium:            500;
+$bold:              700;
+
+
+$z-index: (
+	top           : 100,
+	nav           : 110
+);
+
+
+// Default
+
+$base-font-size:	16;
+$base:				1680;
+$project:			1840;
+$withnarrow:        1360;
+
+
+// RWD
+
+$tablet:				1024;
+$tablet_portrait:		768;
+$smartphone:			640;
+$smartphone_portrait:	480;

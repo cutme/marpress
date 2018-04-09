@@ -1,0 +1,33 @@
+.o-header {
+    @extend %rel;
+
+    &--big {
+        margin-bottom: 40px;
+        line-height: 1;
+        text-transform: uppercase;
+        font: {
+            family: $cervo-medium;
+            size: rem(115);
+        }
+    }
+    
+    &--small {
+        margin-bottom: 70px;
+        padding-left: 50px;
+        font: {
+            family: $boston-bold;
+            size: rem(22);
+        }
+    
+        &:before {
+            @extend %anim;
+            @extend %abs;
+            @extend %abs-after;
+            @extend %abs-y;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background-color: $c-blue1;
+        }
+    }
+}

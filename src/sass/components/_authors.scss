@@ -1,0 +1,47 @@
+.c-authors {
+    background: {
+        color: $c-blue1;
+        image: url(../img/logo-marpress--circle.svg);
+        repeat: no-repeat;
+        position: 160% center;
+        size: 760px auto;
+    }
+    margin-bottom: get-vw-project(90);
+    padding-top: 50px;
+    color: white;
+    
+    @media screen and ( min-width: $base + 1px ) {
+        margin-bottom: 90px;
+    }
+
+    .o-header {
+        &--small {
+            &:before {
+                background-color: white;
+            }
+        }
+    }
+    
+    .c-gallery {
+        figure {
+            .photo {    
+                &--image {
+                    background-color: white;
+                    color: $c-blue1;
+                }
+            }
+        }
+    }
+    
+    .c-tabs__menu {
+        li {
+            margin-right: 20px;
+            
+            &:hover {
+                &:not(.is-active) {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}

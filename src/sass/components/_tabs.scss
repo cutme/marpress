@@ -1,0 +1,37 @@
+.c-tabs {
+
+    &__content {
+        @extend %flex;
+        @extend %flex-wrap;
+        
+        > li {
+            display: none;
+            
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+
+    &__menu {
+        @extend %flex;
+        @extend %flex-wrap;
+        margin-bottom: 70px;
+
+        li {
+            @extend %anim;
+            text-transform: uppercase;
+            font: {
+                family: $cervo-medium;
+                size: rem(25);
+            }
+            cursor: pointer;
+            white-space: nowrap;  
+            color: $c-blue2;
+            
+            &.is-active {
+                color: white;
+            }                
+        }
+    }
+}

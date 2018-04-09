@@ -1,0 +1,31 @@
+.c-social {
+    ul {
+        @extend %flex;
+        
+        .menu-hidden & {
+            justify-content: center;
+        }
+    }
+
+    li {
+        margin-right: 15px;
+        
+        .menu-hidden & {
+            margin: 0 7.5px;
+        }
+    }
+    
+    [class^="icon-"], [class*=" icon-"] {
+        @extend %anim;
+        @extend %flex;
+        @extend %flex-xy;
+        width: 42px; height: 42px;
+        border: 2px solid $c-blue1;
+        border-radius: 50%;
+        font-size: rem(20);
+        
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.c-where {
+    margin-bottom: get-vw-project(90);
+    
+    @media screen and ( min-width: $base + 1px ) {
+        margin-bottom: 90px;
+    }
+    
+    .o-section {
+        @extend %rel;
+        border: 1px solid $c-blue1;
+        padding: 75px 40px 40px 40px;
+    }
+    
+    .o-section {
+        & > {
+            .o-header {
+                @extend %abs;
+                left: 40px; top: -12px;
+                background-color: white;
+                padding: 0 20px;
+        
+                font: {
+                    family: $boston-bold;
+                    size: rem(22);
+                }
+            }
+        }
+    }
+}

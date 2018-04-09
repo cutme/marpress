@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#fff">
+    <title>Marpress</title>
+<script>
+
+/*! pace 1.0.2 */
+(function(){var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X=[].slice,Y={}.hasOwnProperty,Z=function(a,b){function c(){this.constructor=a}for(var d in b)Y.call(b,d)&&(a[d]=b[d]);return c.prototype=b.prototype,a.prototype=new c,a.__super__=b.prototype,a},$=[].indexOf||function(a){for(var b=0,c=this.length;c>b;b++)if(b in this&&this[b]===a)return b;return-1};for(u={catchupTime:100,initialRate:.03,minTime:250,ghostTime:100,maxProgressPerFrame:20,easeFactor:1.25,startOnPageLoad:!0,restartOnPushState:!0,restartOnRequestAfter:500,target:"body",elements:{checkInterval:100,selectors:["body"]},eventLag:{minSamples:10,sampleCount:3,lagThreshold:3},ajax:{trackMethods:["GET"],trackWebSockets:!0,ignoreURLs:[]}},C=function(){var a;return null!=(a="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance.now():void 0)?a:+new Date},E=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,t=window.cancelAnimationFrame||window.mozCancelAnimationFrame,null==E&&(E=function(a){return setTimeout(a,50)},t=function(a){return clearTimeout(a)}),G=function(a){var b,c;return b=C(),(c=function(){var d;return d=C()-b,d>=33?(b=C(),a(d,function(){return E(c)})):setTimeout(c,33-d)})()},F=function(){var a,b,c;return c=arguments[0],b=arguments[1],a=3<=arguments.length?X.call(arguments,2):[],"function"==typeof c[b]?c[b].apply(c,a):c[b]},v=function(){var a,b,c,d,e,f,g;for(b=arguments[0],d=2<=arguments.length?X.call(arguments,1):[],f=0,g=d.length;g>f;f++)if(c=d[f])for(a in c)Y.call(c,a)&&(e=c[a],null!=b[a]&&"object"==typeof b[a]&&null!=e&&"object"==typeof e?v(b[a],e):b[a]=e);return b},q=function(a){var b,c,d,e,f;for(c=b=0,e=0,f=a.length;f>e;e++)d=a[e],c+=Math.abs(d),b++;return c/b},x=function(a,b){var c,d,e;if(null==a&&(a="options"),null==b&&(b=!0),e=document.querySelector("[data-pace-"+a+"]")){if(c=e.getAttribute("data-pace-"+a),!b)return c;try{return JSON.parse(c)}catch(f){return d=f,"undefined"!=typeof console&&null!==console?console.error("Error parsing inline pace options",d):void 0}}},g=function(){function a(){}return a.prototype.on=function(a,b,c,d){var e;return null==d&&(d=!1),null==this.bindings&&(this.bindings={}),null==(e=this.bindings)[a]&&(e[a]=[]),this.bindings[a].push({handler:b,ctx:c,once:d})},a.prototype.once=function(a,b,c){return this.on(a,b,c,!0)},a.prototype.off=function(a,b){var c,d,e;if(null!=(null!=(d=this.bindings)?d[a]:void 0)){if(null==b)return delete this.bindings[a];for(c=0,e=[];c<this.bindings[a].length;)e.push(this.bindings[a][c].handler===b?this.bindings[a].splice(c,1):c++);return e}},a.prototype.trigger=function(){var a,b,c,d,e,f,g,h,i;if(c=arguments[0],a=2<=arguments.length?X.call(arguments,1):[],null!=(g=this.bindings)?g[c]:void 0){for(e=0,i=[];e<this.bindings[c].length;)h=this.bindings[c][e],d=h.handler,b=h.ctx,f=h.once,d.apply(null!=b?b:this,a),i.push(f?this.bindings[c].splice(e,1):e++);return i}},a}(),j=window.Pace||{},window.Pace=j,v(j,g.prototype),D=j.options=v({},u,window.paceOptions,x()),U=["ajax","document","eventLag","elements"],Q=0,S=U.length;S>Q;Q++)K=U[Q],D[K]===!0&&(D[K]=u[K]);i=function(a){function b(){return V=b.__super__.constructor.apply(this,arguments)}return Z(b,a),b}(Error),b=function(){function a(){this.progress=0}return a.prototype.getElement=function(){var a;if(null==this.el){if(a=document.querySelector(D.target),!a)throw new i;this.el=document.createElement("div"),this.el.className="pace pace-active",document.body.className=document.body.className.replace(/pace-done/g,""),document.body.className+=" pace-running",this.el.innerHTML='<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>',null!=a.firstChild?a.insertBefore(this.el,a.firstChild):a.appendChild(this.el)}return this.el},a.prototype.finish=function(){var a;return a=this.getElement(),a.className=a.className.replace("pace-active",""),a.className+=" pace-inactive",document.body.className=document.body.className.replace("pace-running",""),document.body.className+=" pace-done"},a.prototype.update=function(a){return this.progress=a,this.render()},a.prototype.destroy=function(){try{this.getElement().parentNode.removeChild(this.getElement())}catch(a){i=a}return this.el=void 0},a.prototype.render=function(){var a,b,c,d,e,f,g;if(null==document.querySelector(D.target))return!1;for(a=this.getElement(),d="translate3d("+this.progress+"%, 0, 0)",g=["webkitTransform","msTransform","transform"],e=0,f=g.length;f>e;e++)b=g[e],a.children[0].style[b]=d;return(!this.lastRenderedProgress||this.lastRenderedProgress|0!==this.progress|0)&&(a.children[0].setAttribute("data-progress-text",""+(0|this.progress)+"%"),this.progress>=100?c="99":(c=this.progress<10?"0":"",c+=0|this.progress),a.children[0].setAttribute("data-progress",""+c)),this.lastRenderedProgress=this.progress},a.prototype.done=function(){return this.progress>=100},a}(),h=function(){function a(){this.bindings={}}return a.prototype.trigger=function(a,b){var c,d,e,f,g;if(null!=this.bindings[a]){for(f=this.bindings[a],g=[],d=0,e=f.length;e>d;d++)c=f[d],g.push(c.call(this,b));return g}},a.prototype.on=function(a,b){var c;return null==(c=this.bindings)[a]&&(c[a]=[]),this.bindings[a].push(b)},a}(),P=window.XMLHttpRequest,O=window.XDomainRequest,N=window.WebSocket,w=function(a,b){var c,d,e;e=[];for(d in b.prototype)try{e.push(null==a[d]&&"function"!=typeof b[d]?"function"==typeof Object.defineProperty?Object.defineProperty(a,d,{get:function(){return b.prototype[d]},configurable:!0,enumerable:!0}):a[d]=b.prototype[d]:void 0)}catch(f){c=f}return e},A=[],j.ignore=function(){var a,b,c;return b=arguments[0],a=2<=arguments.length?X.call(arguments,1):[],A.unshift("ignore"),c=b.apply(null,a),A.shift(),c},j.track=function(){var a,b,c;return b=arguments[0],a=2<=arguments.length?X.call(arguments,1):[],A.unshift("track"),c=b.apply(null,a),A.shift(),c},J=function(a){var b;if(null==a&&(a="GET"),"track"===A[0])return"force";if(!A.length&&D.ajax){if("socket"===a&&D.ajax.trackWebSockets)return!0;if(b=a.toUpperCase(),$.call(D.ajax.trackMethods,b)>=0)return!0}return!1},k=function(a){function b(){var a,c=this;b.__super__.constructor.apply(this,arguments),a=function(a){var b;return b=a.open,a.open=function(d,e){return J(d)&&c.trigger("request",{type:d,url:e,request:a}),b.apply(a,arguments)}},window.XMLHttpRequest=function(b){var c;return c=new P(b),a(c),c};try{w(window.XMLHttpRequest,P)}catch(d){}if(null!=O){window.XDomainRequest=function(){var b;return b=new O,a(b),b};try{w(window.XDomainRequest,O)}catch(d){}}if(null!=N&&D.ajax.trackWebSockets){window.WebSocket=function(a,b){var d;return d=null!=b?new N(a,b):new N(a),J("socket")&&c.trigger("request",{type:"socket",url:a,protocols:b,request:d}),d};try{w(window.WebSocket,N)}catch(d){}}}return Z(b,a),b}(h),R=null,y=function(){return null==R&&(R=new k),R},I=function(a){var b,c,d,e;for(e=D.ajax.ignoreURLs,c=0,d=e.length;d>c;c++)if(b=e[c],"string"==typeof b){if(-1!==a.indexOf(b))return!0}else if(b.test(a))return!0;return!1},y().on("request",function(b){var c,d,e,f,g;return f=b.type,e=b.request,g=b.url,I(g)?void 0:j.running||D.restartOnRequestAfter===!1&&"force"!==J(f)?void 0:(d=arguments,c=D.restartOnRequestAfter||0,"boolean"==typeof c&&(c=0),setTimeout(function(){var b,c,g,h,i,k;if(b="socket"===f?e.readyState<2:0<(h=e.readyState)&&4>h){for(j.restart(),i=j.sources,k=[],c=0,g=i.length;g>c;c++){if(K=i[c],K instanceof a){K.watch.apply(K,d);break}k.push(void 0)}return k}},c))}),a=function(){function a(){var a=this;this.elements=[],y().on("request",function(){return a.watch.apply(a,arguments)})}return a.prototype.watch=function(a){var b,c,d,e;return d=a.type,b=a.request,e=a.url,I(e)?void 0:(c="socket"===d?new n(b):new o(b),this.elements.push(c))},a}(),o=function(){function a(a){var b,c,d,e,f,g,h=this;if(this.progress=0,null!=window.ProgressEvent)for(c=null,a.addEventListener("progress",function(a){return h.progress=a.lengthComputable?100*a.loaded/a.total:h.progress+(100-h.progress)/2},!1),g=["load","abort","timeout","error"],d=0,e=g.length;e>d;d++)b=g[d],a.addEventListener(b,function(){return h.progress=100},!1);else f=a.onreadystatechange,a.onreadystatechange=function(){var b;return 0===(b=a.readyState)||4===b?h.progress=100:3===a.readyState&&(h.progress=50),"function"==typeof f?f.apply(null,arguments):void 0}}return a}(),n=function(){function a(a){var b,c,d,e,f=this;for(this.progress=0,e=["error","open"],c=0,d=e.length;d>c;c++)b=e[c],a.addEventListener(b,function(){return f.progress=100},!1)}return a}(),d=function(){function a(a){var b,c,d,f;for(null==a&&(a={}),this.elements=[],null==a.selectors&&(a.selectors=[]),f=a.selectors,c=0,d=f.length;d>c;c++)b=f[c],this.elements.push(new e(b))}return a}(),e=function(){function a(a){this.selector=a,this.progress=0,this.check()}return a.prototype.check=function(){var a=this;return document.querySelector(this.selector)?this.done():setTimeout(function(){return a.check()},D.elements.checkInterval)},a.prototype.done=function(){return this.progress=100},a}(),c=function(){function a(){var a,b,c=this;this.progress=null!=(b=this.states[document.readyState])?b:100,a=document.onreadystatechange,document.onreadystatechange=function(){return null!=c.states[document.readyState]&&(c.progress=c.states[document.readyState]),"function"==typeof a?a.apply(null,arguments):void 0}}return a.prototype.states={loading:0,interactive:50,complete:100},a}(),f=function(){function a(){var a,b,c,d,e,f=this;this.progress=0,a=0,e=[],d=0,c=C(),b=setInterval(function(){var g;return g=C()-c-50,c=C(),e.push(g),e.length>D.eventLag.sampleCount&&e.shift(),a=q(e),++d>=D.eventLag.minSamples&&a<D.eventLag.lagThreshold?(f.progress=100,clearInterval(b)):f.progress=100*(3/(a+3))},50)}return a}(),m=function(){function a(a){this.source=a,this.last=this.sinceLastUpdate=0,this.rate=D.initialRate,this.catchup=0,this.progress=this.lastProgress=0,null!=this.source&&(this.progress=F(this.source,"progress"))}return a.prototype.tick=function(a,b){var c;return null==b&&(b=F(this.source,"progress")),b>=100&&(this.done=!0),b===this.last?this.sinceLastUpdate+=a:(this.sinceLastUpdate&&(this.rate=(b-this.last)/this.sinceLastUpdate),this.catchup=(b-this.progress)/D.catchupTime,this.sinceLastUpdate=0,this.last=b),b>this.progress&&(this.progress+=this.catchup*a),c=1-Math.pow(this.progress/100,D.easeFactor),this.progress+=c*this.rate*a,this.progress=Math.min(this.lastProgress+D.maxProgressPerFrame,this.progress),this.progress=Math.max(0,this.progress),this.progress=Math.min(100,this.progress),this.lastProgress=this.progress,this.progress},a}(),L=null,H=null,r=null,M=null,p=null,s=null,j.running=!1,z=function(){return D.restartOnPushState?j.restart():void 0},null!=window.history.pushState&&(T=window.history.pushState,window.history.pushState=function(){return z(),T.apply(window.history,arguments)}),null!=window.history.replaceState&&(W=window.history.replaceState,window.history.replaceState=function(){return z(),W.apply(window.history,arguments)}),l={ajax:a,elements:d,document:c,eventLag:f},(B=function(){var a,c,d,e,f,g,h,i;for(j.sources=L=[],g=["ajax","elements","document","eventLag"],c=0,e=g.length;e>c;c++)a=g[c],D[a]!==!1&&L.push(new l[a](D[a]));for(i=null!=(h=D.extraSources)?h:[],d=0,f=i.length;f>d;d++)K=i[d],L.push(new K(D));return j.bar=r=new b,H=[],M=new m})(),j.stop=function(){return j.trigger("stop"),j.running=!1,r.destroy(),s=!0,null!=p&&("function"==typeof t&&t(p),p=null),B()},j.restart=function(){return j.trigger("restart"),j.stop(),j.start()},j.go=function(){var a;return j.running=!0,r.render(),a=C(),s=!1,p=G(function(b,c){var d,e,f,g,h,i,k,l,n,o,p,q,t,u,v,w;for(l=100-r.progress,e=p=0,f=!0,i=q=0,u=L.length;u>q;i=++q)for(K=L[i],o=null!=H[i]?H[i]:H[i]=[],h=null!=(w=K.elements)?w:[K],k=t=0,v=h.length;v>t;k=++t)g=h[k],n=null!=o[k]?o[k]:o[k]=new m(g),f&=n.done,n.done||(e++,p+=n.tick(b));return d=p/e,r.update(M.tick(b,d)),r.done()||f||s?(r.update(100),j.trigger("done"),setTimeout(function(){return r.finish(),j.running=!1,j.trigger("hide")},Math.max(D.ghostTime,Math.max(D.minTime-(C()-a),0)))):c()})},j.start=function(a){v(D,a),j.running=!0;try{r.render()}catch(b){i=b}return document.querySelector(".pace")?(j.trigger("start"),j.go()):setTimeout(j.start,50)},"function"==typeof define&&define.amd?define(["pace"],function(){return j}):"object"==typeof exports?module.exports=j:D.startOnPageLoad&&j.start()}).call(this);
+
+
+    Pace.on('done', function() {
+        
+        (function (arr) {
+          arr.forEach(function (item) {
+            if (item.hasOwnProperty('remove')) {
+              return;
+            }
+            Object.defineProperty(item, 'remove', {
+              configurable: true,
+              enumerable: true,
+              writable: true,
+              value: function remove() {
+                this.parentNode.removeChild(this);
+              }
+            });
+          });
+        })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+        
+        document.getElementById('cover').remove();        
+        document.body.removeAttribute('style');
+    });
+</script>
+</head>
+
+<body style="overflow: hidden" itemscope="itemscope" itemtype="https://schema.org/WebPage" class="menu-hidden-">
+
+<div style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 120; background-color: white; background-repeat: no-repeat; background-position: center; background-size: 80px" id="cover"></div>
+
+	<div itemprop="mainContentOfPage" role="main" class="o-container">
+        
+        <aside class="c-aside js-aside" id="aside">
+            <div class="c-aside__menu">
+                <div class="c-aside__full">
+                    <div class="c-logo">
+                        <div class="c-logo__full">
+                            <img src=img/logo-marpress.svg width="160" height="150" alt="Marpress">
+                        </div>
+                    </div>
+
+                    <nav class="c-nav">
+                        <ul>
+                            <li>
+                                <a href="#about" class="js-goto">O nas</a>
+                            </li>
+                            
+                            <li>
+                                <a href="#books" class="js-goto">Książki</a>
+                            </li>
+                            
+                            <li>
+                                <a href="#authors" class="js-goto">Autorzy</a>
+                            </li>
+                            
+                            <li>
+                                <a href="#news" class="js-goto">Wydarzenia</a>
+                            </li>
+    
+                            <li>
+                                <a href="#where" class="js-goto">Gdzie kupić</a>
+                            </li>
+                            
+                            <li>
+                                <a href="#contact" class="js-goto">Kontakt</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <nav class="c-social">
+                        <ul>
+                            <li>
+                                <a href="#" class="icon-facebook"></a>
+                            </li>
+                            
+                            <li>
+                                <a href="#" class="icon-instagram"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="c-aside__narrow">
+                    <div class="c-logo">
+                        <div class="c-logo__single">
+                            <img src=img/logo-marpress--single.svg width="50" height="64" alt="Marpress">
+                        </div>
+                    </div>
+                    
+                    <div class="c-aside__back js-fullmenu">Wróć do menu</div>
+                
+                    <div class="c-aside__ahead">
+                        <img src=img/ahead.svg width="55" height="332" alt="Cała naprzód!">
+                    </div>
+                
+                    <nav class="c-social">
+                        <ul>
+                            <li>
+                                <a href="#" class="icon-facebook"></a>
+                            </li>
+                            
+                            <li>
+                                <a href="#" class="icon-instagram"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+
+        <div class="c-page">
+            <div class="c-top">
+                <div class="c-lead">
+                    <div class="c-lead__title">Litaraturą</div>
+                    <div class="c-lead__line"></div>
+                    <div class="c-lead__title">Skracamy dystans</div>
+                </div>
+
+                <div class="c-top__header">
+                    Nowa książka<br> 
+                    już w sprzedaży                
+                </div>
+
+                <img src=img/top.jpg alt="">
+            </div>
+
+
+            <div class="c-about" id="about">
+                <div class="o-wrap">
+                    <section class="o-section anim anim--up">    
+                        <header class="o-header o-header--small anim anim--left">
+                            <h2>Poznaj nas</h2>
+                        </header>
+                        
+                        <div class="c-about__intro anim anim--up">
+                            <p>
+    While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need.
+                            </p>
+                        </div>
+                        
+                        <div class="c-article c-article--columns anim anim--up">
+                            <p>
+What began as a simple idea has evolved inteducation and economic opportunity for children and their communities around the world. While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need. 
+                            </p>
+                            
+                            <p>
+What began as a simple idea has evolved inteducation and economic opportunity for children and their communities around the world. While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need. 
+                            </p>
+                        </div>                        
+                    </section>
+
+                    <section class="o-section">
+                        <header class="o-header o-header--small anim anim--left">
+                            <h2>Jak to się zaczęło?</h2>
+                        </header>
+
+                        <div class="c-timeline anim anim--up swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="c-timeline__item c-timeline__item--negative swiper-slide">
+                                    <p class="date">1951</p>
+                                    <p class="info">Twórcy Wydawcnitwa Marpress rozpoczęli prace w nowo powstałym wydawnictwie Morskim.</p>
+                                </div>
+                                
+                                <div class="c-timeline__item swiper-slide">
+                                    <p class="date">1963</p>
+                                    <p class="info">Twórcy Wydawcnitwa Marpress rozpoczęli prace w nowo powstałym wydawnictwie Morskim.</p>
+                                </div>
+                                
+                                <div class="c-timeline__item swiper-slide">
+                                    <p class="date">1976</p>
+                                    <p class="info">Twórcy Wydawcnitwa Marpress rozpoczęli prace w nowo powstałym wydawnictwie Morskim.</p>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="o-section">
+                        <header class="o-header o-header--small anim anim--left">
+                            <h2>My z bliska</h2>
+                        </header>
+                        
+                        <div class="c-gallery">
+                            <div class="c-gallery__item">
+                                <figure>
+                                    <div class="photo photo--multiply">
+                                        <div>
+                                            <img src=img/grzegorz.jpg alt="grzegorz młynarski" width="200" height="200">
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption>
+                                        <p class="name">Grzegorz Młynarski</p>
+                                        <p>dyrektor wydawniczy</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            
+                            <div class="c-gallery__item">
+                                <figure>
+                                    <div class="photo photo--multiply">
+                                        <div>
+                                            <img src=img/grzegorz.jpg alt="grzegorz młynarski" width="200" height="200">
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption>
+                                        <p class="name">Grzegorz Młynarski</p>
+                                        <p>dyrektor wydawniczy</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            
+                            <div class="c-gallery__item">
+                                <figure>
+                                    <div class="photo photo--multiply">
+                                        <div>
+                                            <img src=img/grzegorz.jpg alt="grzegorz młynarski" width="200" height="200">
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption>
+                                        <p class="name">Grzegorz Młynarski</p>
+                                        <p>dyrektor wydawniczy</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            
+                            <div class="c-gallery__item">
+                                <figure>
+                                    <div class="photo photo--multiply">
+                                        <div>
+                                            <img src=img/grzegorz.jpg alt="grzegorz młynarski" width="200" height="200">
+                                        </div>
+                                    </div>
+                                    
+                                    <figcaption>
+                                        <p class="name">Grzegorz Młynarski</p>
+                                        <p>dyrektor wydawniczy</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            
+                            <a href="#" class="c-gallery__item">
+                                <figure>
+                                    <div class="photo photo--image">
+                                         <i class="icon-avatar"></i>
+                                    </div>
+                                    
+                                    <figcaption>
+                                        <p class="name">Dołącz do nas</p>
+                                        <p>Aplikuj o pracę!</p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+            <div class="c-books" id="books">
+                <div class="o-wrap">                
+                    <section class="o-section anim anim--up">    
+                        <header class="o-header o-header--big">
+                            <h2>Poznaj nasze<br>
+                                niezwykłe historie
+                            </h2>
+                        </header>
+                
+                        <header class="o-header o-header--small o-header--big anim anim--left">
+                            <h2>Książki</h2>
+                        </header>
+                        
+                        <div class="c-article c-article--half">
+                            <p>
+While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need. One for One.
+                            </p>
+                        </div>
+                    </section>
+                
+                
+                    <section class="o-section">
+                        <div class="c-tabs js-tabs">
+                            <ul class="c-tabs__menu js-menu">
+                                <li class="is-active">Promocje</li>
+                                <li>Wszystkie</li>
+                                <li>Tylko dostępne</li>
+                                <li>Literatura piękna</li>
+                            </ul>
+                            
+                            <ul class="c-tabs__content js-content">
+                                <li class="js-contentItem is-active">
+                                    <ul class="c-books__items">
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="js-contentItem">
+                                    <ul class="c-books__items">
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="js-contentItem">
+                                    <ul class="c-books__items">
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="js-contentItem">
+                                    <ul class="c-books__items">
+                                        
+                                        <li class="c-books__item">
+                                            <a href="#" class="image" data-line="wczytaj więcej">
+                                                <img src=img/book.jpg alt="book" width="160" height="248">
+                                            </a>
+                                            
+                                            <p class="title">Nieznane więzi natury</p>
+                                            <p class="author">Peter Wohhleren</p>
+                                            <p class="price price--linethrough">
+                                                <span>cena regularna</span> <span>44 zł</span>
+                                            </p>
+                                            <p class="price">
+                                                <span>cena z rabatem</span> <span>39 zł</span>
+                                            </p>
+                                            
+                                            <a href="#" class="o-btn o-btn--blue1">Kup książkę</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>                    
+                    </section>
+                </div>
+            </div>
+            
+
+            <div class="c-authors" id="authors">
+                <div class="o-wrap">
+                    <header class="o-header o-header--small anim anim--left">
+                        <h2>Najlepsi autorzy</h2>
+                    </header>
+                    
+                    <div class="c-tabs js-tabs">
+                        <ul class="c-tabs__menu js-menu anim anim--left">
+                            <li class="is-active">a</li>
+                            <li>b</li>
+                            <li>c</li>
+                            <li>d</li>
+                        </ul>
+
+                        <ul class="c-tabs__content js-content">
+                            <li class="js-contentItem is-active">
+                                <div class="c-gallery">
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="andrzej młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Andrzej Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Adam młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Adam Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="andrzej młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Andrzej Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Adam młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Adam Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="andrzej młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Andrzej Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Adam młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Adam Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="andrzej młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Andrzej Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Adam młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Adam Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="andrzej młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Andrzej Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Adam młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Adam Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <a href="#" class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo photo--image">
+                                                 <i class="icon-avatar"></i>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Dołącz do nas</p>
+                                                <p>Aplikuj o pracę!</p>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            
+                            <li class="js-contentItem">
+                                <div class="c-gallery">
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Bartosz młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Bartosz Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Bogusław młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Bogusław Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Bronisław młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Bronisław Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <a href="#" class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo photo--image">
+                                                 <i class="icon-avatar"></i>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Dołącz do nas</p>
+                                                <p>Aplikuj o pracę!</p>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            
+                            <li class="js-contentItem">
+                                <div class="c-gallery">
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Cezary młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Cezary Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Czesław młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Czesław Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <a href="#" class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo photo--image">
+                                                 <i class="icon-avatar"></i>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Dołącz do nas</p>
+                                                <p>Aplikuj o pracę!</p>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                            
+                            <li class="js-contentItem">
+                                <div class="c-gallery">
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Darek młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Darek Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo">
+                                                <div>
+                                                    <img src=img/grzegorz.jpg alt="Damian młynarski" width="200" height="200">
+                                                </div>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Damian Młynarski</p>
+                                                <p>Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć...</p>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    
+                                    <a href="#" class="c-gallery__item anim anim--up">
+                                        <figure>
+                                            <div class="photo photo--image">
+                                                 <i class="icon-avatar"></i>
+                                            </div>
+                                            
+                                            <figcaption>
+                                                <p class="name">Dołącz do nas</p>
+                                                <p>Aplikuj o pracę!</p>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div class="c-news" id="news">
+                <div class="o-wrap o-wrap--wide">
+                    <section class="o-section">
+                        <header class="o-header o-header--small anim anim--left">
+                            <h2>Dzieje się!</h2>
+                        </header>
+
+
+                        <ul class="c-news__items anim anim--up">
+                            <li>
+                                <div>
+                                    <div class="photo">
+                                        <a href="#">
+                                            <img src=img/news.jpg alt="news" width="320" height="220">
+                                        </a>
+                                    </div>
+                                
+                                    <h3 class="title">
+                                        <a href="#">spotkanie autorskie – andrzej norman</a>
+                                    </h3>
+                                    
+                                    <div class="excerpt">
+                                        <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor est nec sodales condimentum aenean auctor est
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="link">
+                                        <a href="#">Zobacz szczegóły</a>
+                                    </div>
+                                    
+                                    <div class="date">
+                                        <span>02.06.2018</span>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div>
+                                    <div class="photo">
+                                        <a href="#">
+                                            <img src=img/news.jpg alt="news" width="320" height="220">
+                                        </a>
+                                    </div>
+                                
+                                    <h3 class="title">
+                                        <a href="#">Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz</a>
+                                    </h3>
+                                    
+                                    <div class="excerpt">
+                                        <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor est nec sodales condimentum aenean auctor est
+                                        </p>
+                                    </div>                                    
+                                </div>
+                                
+                                <div>
+                                    <div class="link">
+                                        <a href="#">Zobacz szczegóły</a>
+                                    </div>
+                                    
+                                    <div class="date">
+                                        <span>02.06.2018</span>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div>
+                                    <div class="photo">
+                                        <a href="#">
+                                            <img src=img/news.jpg alt="news" width="320" height="220">
+                                        </a>
+                                    </div>
+                                
+                                    <h3 class="title">
+                                        <a href="#">Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz</a>
+                                    </h3>
+                                    
+                                    <div class="excerpt">
+                                        <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor est nec sodales condimentum aenean auctor est
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="link">
+                                        <a href="#">Zobacz szczegóły</a>
+                                    </div>
+                                    
+                                    <div class="date">
+                                        <span>02.06.2018</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                    </section>
+                </div>
+            </div>
+            
+
+            <div class="c-where" id="where">
+                <div class="o-wrap o-wrap--wide">
+                    <section class="o-section">
+                        <header class="o-header">
+                            <h2>Gdzie kupisz</h2>
+                        </header>
+                        
+                        <div class="c-shops">
+                            <div class="c-shops__col anim anim--fadein">
+                                <div class="c-address">
+                                    <header class="o-header anim anim--left">
+                                        <h4>Księgarnie</h4>
+                                    </header>
+                                    
+                                    <div>
+                                        <address>
+                                            <p><strong>Autorska</strong></p>
+                                            <p>ul. Bałtycka 20</p>
+                                            <p>80-233 Lublin</p>
+                                        </address>
+                                        
+                                        <address>
+                                            <p><strong>Centralna</strong></p>
+                                            <p>ul. Bałtycka 20</p>
+                                            <p>80-233 Lublin</p>
+                                        </address>
+                                        
+                                        
+                                        <address>
+                                            <p><strong>Stacja Książki</strong></p>
+                                            <p>ul. Bałtycka 20</p>
+                                            <p>80-233 Lublin</p>
+                                        </address>
+                                        
+                                        <address>
+                                            <p><strong>Literacka</strong></p>
+                                            <p>ul. Bałtycka 20</p>
+                                            <p>80-233 Lublin</p>
+                                        </address>
+                                        
+                                        <address>
+                                            <p><strong>Filman</strong></p>
+                                            <p>ul. Bałtycka 20</p>
+                                            <p>80-233 Lublin</p>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="c-shops__col anim anim--fadein">
+                                <div class="c-address">
+                                    <header class="o-header">
+                                        <h4>Hurtownie</h4>
+                                    </header>
+                                    
+                                    <div>
+                                        <address>
+                                            <p><strong>Wexbook</strong></p>
+                                            <p>ul. Grunwaldzka 14/2</p>
+                                            <p>23-564 Poznań</p>
+                                        </address>
+                                        
+                                        <address>
+                                            <p><strong>WBC</strong></p>
+                                            <p>ul. Grunwaldzka 14/2</p>
+                                            <p>23-564 Poznań</p>
+                                        </address>
+                                        
+                                        
+                                        <address>
+                                            <p><strong>Centra Książki</strong></p>
+                                            <p>ul. Grunwaldzka 14/2</p>
+                                            <p>23-564 Poznań</p>
+                                        </address>
+                                        
+                                        <address>
+                                            <p><strong>Empik</strong></p>
+                                            <p>ul. Grunwaldzka 14/2</p>
+                                            <p>23-564 Poznań</p>
+                                        </address>
+                                        
+                                        <address>
+                                            <p><strong>Hurtksiąż</strong></p>
+                                            <p>ul. Grunwaldzka 14/2</p>
+                                            <p>23-564 Poznań</p>
+                                        </address>
+                                        
+                                        <address>
+                                            <p><strong>Travos</strong></p>
+                                            <p>ul. Grunwaldzka 14/2</p>
+                                            <p>23-564 Poznań</p>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="c-shops__col c-shops__col--narrow anim anim--fadein">
+                                <div class="c-address">
+                                    <header class="o-header">
+                                        <h4>Internet</h4>
+                                    </header>
+    
+                                    <ul class="links">
+                                        <li>
+                                            <a href="#">aurora.pl</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">alegro.pl</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">bookszpan.pl</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">ksiazki.pl</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">dobreksiazki.pl</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">ebook.pl</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="c-shops__more anim anim--up">
+                            <a href="#" class="o-btn o-btn--blue2">Wczytaj więcej</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            
+            <div class="c-contact" id="contact">
+                <div class="o-wrap o-wrap--wide">              
+                    <section class="o-section">    
+                        <header class="o-header o-header--big">
+                            <h2>Jesteśmy bliżej<br>
+                                niż sądzisz
+                            </h2>
+                        </header>
+                
+                        <header class="o-header o-header--small anim anim--left">
+                            <h2>Napisz, zadzwoń, wstąp</h2>
+                        </header>
+                        
+                        <div class="c-article c-article--half">
+                            <p>
+While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need. One for One.
+                            </p>
+                        </div>
+                    </section>
+                
+                
+                    <section class="o-section">
+                        <div class="c-map">
+                            <img src=img/map.png alt="map" width="1120" height="434">
+                        </div>
+                    </section>
+                </div>
+            </div>   
+            
+            
+            <div class="c-footer">
+                <div class="o-wrap o-wrap--wide">
+                    <section class="o-section">
+                        <ul class="c-footer__content">
+                            <li class="c-footer__col anim anim--up">
+                                <div class="c-address">
+                                    <header class="o-header">
+                                        <h4>Dane firmowe</h4>
+                                    </header>
+
+                                    <address>
+                                        <p>Wydawnictwo "Marpress" Sp. z o.o.</p>
+                                        <p>ul. Targ Rybny 10B</p>
+                                        <p>80-838 Gdańsk</p>
+                                        <p>tel. (0 58) 301-47-00</p>
+                                    </address>
+                                    
+                                    <header class="o-header">
+                                        <h4>Godziny otwarcia</h4>
+                                    </header>
+
+                                    <address>
+                                        <p>pon.-pt. 8:00-15:00</p>
+                                    </address>
+                                </div>
+                            </li>
+                            
+                            <li class="c-footer__col anim anim--up">
+                                <div class="c-address">
+                                    <header class="o-header">
+                                        <h4>Kontakt</h4>
+                                    </header>
+
+                                    <address>
+                                        <p><strong>Redakcja</strong></p>
+                                        <p>tel. (0 58) 301-47-00</p>
+                                        <p>e-mail: red@marpress.x.pl</p>
+                                    </address>
+                                    
+                                    <address>
+                                        <p><strong>Sprzedaż</strong></p>
+                                        <p>tel. (0 58) 301-47-00</p>
+                                        <p>e-mail: red@marpress.x.pl</p>
+                                    </address>
+                                    
+                                    <address>
+                                        <p><strong>Księgarnia</strong></p>
+                                        <p>tel. (0 58) 301-47-00</p>
+                                        <p>e-mail: red@marpress.x.pl</p>
+                                    </address>
+                                </div>
+                            </li>
+                            
+                            <li class="c-footer__col anim anim--up">
+                                <div class="c-address">
+                                    <header class="o-header">
+                                        <h4>Chcesz wydać książkę?</h4>
+                                    </header>
+
+                                    <p><strong>Pobierz zasady współpracy z naszym wydawnictwem</strong></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+      
+        </div>
+	</div><!-- /container -->
+
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>

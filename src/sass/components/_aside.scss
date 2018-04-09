@@ -1,0 +1,104 @@
+.c-aside {
+    @extend %anim;
+    @extend %rel;
+    width: grid(480);
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+
+    .pace-done & {
+        @extend %anim;
+		opacity: 1;
+	}
+    
+    @media screen and ( min-width: $base + 1px ) {
+        width: 480px;
+    }
+    
+    &__ahead {
+        width: 55px;
+        margin: 0 auto 40px auto;
+        
+        .menu-hidden & {
+            //display: block;
+           // animation: fadeInFromNone 1s forwards;
+        }
+    }
+    
+    &__back {
+        display: none;
+        margin-bottom: 36px;
+        padding: 10px 0;
+        border: {
+            top: 1px solid $c-blue1;
+            bottom: 1px solid $c-blue1;
+        }
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        font: {
+            family: $cervo-medium;
+            size: rem(13.5);
+        }
+
+        .menu-hidden & {
+            display: inline-block;
+            animation: fadeInFromNone 1s forwards;
+        }
+    }
+    
+    &__full {
+        @extend %abs;
+        animation-delay: 1;
+        animation-timing-function: ease-in-out;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+
+        .menu-hidden & {
+            animation: fadeOut 1s forwards;
+        }
+    }
+    
+     &__narrow {
+        @extend %anim--slow;
+        position: absolute;
+        transform: translateX(-480px);
+        opacity: 0;
+        width: 160px;
+        //display: none;
+
+        .menu-hidden & {
+            //display: block;
+            //transform: translateX(0);
+            //opacity: 1;
+            
+            animation: fadeIn 1s forwards;
+        }
+    }
+
+    &__menu {
+        //@extend %abs;
+        position: fixed;
+        left: 0;
+        top: 0; //right: 0;
+        width: grid(480);
+        padding: 45px 0 45px grid(240, $base);
+        
+        @media screen and ( min-width: $base + 1px ) {
+            width: 480px;
+            padding: 45px 0 45px 240px;
+        }
+        
+        .menu-hidden & {
+            position: fixed;
+            //left: 0; top: 0;
+            width: 160px;
+            padding: 45px 0;
+        }
+    }
+    
+    .menu-hidden & {
+        width: 160px;
+        text-align: center;
+    }
+}

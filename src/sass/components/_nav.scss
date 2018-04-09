@@ -1,0 +1,45 @@
+.c-nav {
+    @extend %anim--slow;
+    margin-bottom: 45px;
+   // animation: fadeInFromNone 1s forwards;
+
+    li {
+        margin-bottom: 20px;
+    }
+
+    a {
+        @extend %rel;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        line-height: 1;
+        font: {
+            family: $cervo-regular;
+            size: rem(30);
+        }
+                
+        &:before {
+            @extend %anim;
+            @extend %abs;
+            @extend %abs-after;
+            @extend %abs-y;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $c-blue1;
+            opacity: 0;
+        }
+        
+        &:hover {
+            padding-left: 50px;
+            
+            &:before {
+                width: 40px;
+                opacity: 1;
+            }
+        }
+    }
+    
+    .menu-hidden & {
+        //display: none;
+    }
+}

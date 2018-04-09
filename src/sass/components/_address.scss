@@ -1,0 +1,20 @@
+.c-address {
+
+    address {
+        margin-bottom: 26px;
+        line-height: 1.6;
+        
+        p {
+            white-space: nowrap;
+        }
+    }
+    
+    .o-header {
+        margin-bottom: 26px;
+        text-transform: uppercase;
+        font: {
+            family: $cervo-medium;
+            size: rem(26);
+        }
+    }
+}

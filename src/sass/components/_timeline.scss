@@ -1,0 +1,62 @@
+.c-timeline {
+
+    .swiper-wrapper {
+        @extend %rel;
+        @extend %flex;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    &:after {
+        @extend %abs;
+        @extend %abs-after; z-index: -1;
+        top: 160px;
+        width: 100%; height: 1px;
+        background-color: $c-blue1;
+    }
+    
+    &__item {
+        width: 240px;
+        min-height: 280px;
+        margin-right: 40px;
+        background-color: white;
+        border: 1px solid $c-blue1;
+        padding: 20px 30px;
+        
+        &:nth-child(even) {
+            margin-top: 65px;
+        }
+        
+        .date {
+            margin-bottom: 20px;
+            border-bottom: 1px solid $c-blue1;
+            line-height: 1;
+            font: {
+                family: $cervo-medium;
+                size: get-vw-project(114);
+            }
+            
+            @media screen and ( min-width: $withnarrow + 1px ) {
+                font-size: rem(114);
+            }
+            
+        }
+        
+        .info {
+            font-size: rem(15);
+        }
+        
+        &--negative {
+            background: {
+                image: url('../img/timeline-bg.jpg');
+                repeat: no-repeat;
+                size: cover;
+            }
+            color: white;
+            
+            .date {
+                border-bottom-color: white;
+            }
+        }
+    }
+}

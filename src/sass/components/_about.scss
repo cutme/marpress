@@ -1,0 +1,19 @@
+.c-about {
+    &__intro {
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        font: {
+            family: $cervo-regular;
+            size: rem(30);
+        }
+    }
+    
+    .c-gallery {
+        @media screen and ( max-width: $withnarrow + px ) {
+            justify-content: center;
+        }
+        
+    }
+}
+
+

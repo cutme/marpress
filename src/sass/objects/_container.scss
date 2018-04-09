@@ -1,0 +1,11 @@
+.o-container {
+	@extend %flex;
+	@extend %flex-wrap;
+	//opacity: 0;
+	height: 100%;
+	//
+	overflow: hidden;
+	//padding-left: 480px;
+
+	
+}

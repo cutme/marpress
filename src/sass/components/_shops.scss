@@ -1,0 +1,59 @@
+.c-shops {
+    @extend %flex;
+    @extend %flex-wrap;
+    
+    &__col {
+        width: 40%;
+        padding: 0 20px;                
+
+        &--narrow {
+            width: 20%;
+        }
+        
+        .c-address {
+            & > div {
+                @extend %flex;
+                @extend %flex-wrap;
+            }
+            
+            address {
+                width: 50%;
+                padding: 0 20px;
+            }
+            
+            .o-header {
+                padding: 0 20px;
+            }
+        }
+    }
+    
+    &__more {
+        padding-top: 30px;
+        text-align: center;
+
+        .o-btn {
+            display: inline-flex;
+            letter-spacing: normal;
+            padding: {
+                left: 70px;
+                right: 70px;
+            }
+        }
+    }
+        
+    .links {
+        padding: 0 20px;
+    
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            font-family: $boston-bold;
+            
+            &:hover {
+                color: $c-blue2;
+            }
+        }
+    }
+}

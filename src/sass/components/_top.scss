@@ -1,0 +1,59 @@
+.c-top {
+    @extend %rel;
+    margin-bottom: get-vw-project(90);
+    color: white;
+    
+    img {
+        @extend %rel;
+    }
+    
+    @media screen and ( min-width: $base + 1px ) {
+        margin-bottom: 90px;
+    }
+    
+    &__header {
+        @extend %abs;
+        left: get-vw-project(80);
+        bottom: get-vw-project(60);
+        line-height: 1;
+        text-transform: uppercase;
+        font: {
+            family: $cervo-medium;
+            size: get-vw-project(115);
+        }
+
+        @media screen and ( min-width: $base + 1px ) {
+            left: 80px; bottom: 60px;
+            font-size: 115px;
+        }
+    }
+    
+    @media screen and ( min-width: $project + 1px ) {
+        height: 728px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            left: 50%; top: 0;
+            transform: translateX(-50%);
+            width: 100%; height: auto;
+        }
+    }
+    
+    .menu-hidden & {
+        @media screen and ( min-width: $project - 320 + 1px ) {
+            height: 728px;
+            overflow: hidden;
+    
+            img {
+                position: absolute;
+                left: 50%; top: 0;
+                transform: translateX(-50%);
+                width: 100%; height: auto;
+            }
+        }
+    }
+    
+}
+
+

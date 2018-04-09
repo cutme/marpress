@@ -1,0 +1,118 @@
+.c-books {
+
+    &__item {
+        width: 160px;
+    }
+    
+    &__items {
+        @extend %flex;
+        @extend %flex-wrap;
+
+        li {
+            margin: 0 get-vw-project(60) get-vw-project(60) 0;
+            
+            &:last-child {
+                margin: 0;
+            }
+            
+            @media screen and ( min-width: $base + 1px ) {
+                margin: 0 60px 60px 0;
+            }
+        }
+    }
+    
+    .c-tabs__menu {
+        li {
+            margin-right: 30px;
+            color: $c-blue2;
+            
+            
+            
+            &:last-child {
+                margin: 0;
+            }
+            
+            &:hover {
+                color: darken($c-blue2, 10%);
+            }
+            
+            &.is-active {
+                color: $c-blue1;
+            } 
+        }
+    }
+
+    .author, .price {
+        margin-bottom: 4px;
+        border-bottom: 1px solid $c-blue1;
+    }
+    
+    .author {
+        padding-bottom: 10px;
+        font-size: rem(14);
+    }
+    
+    .image {
+        @extend %rel;
+        display: block;
+        margin-bottom: 40px;
+        overflow: hidden;
+        
+        &:after {
+            @extend %abs;
+            @extend %anim;
+            @extend %flex;
+            @extend %flex-xy;
+            left: -100%; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba($c-blue2, .85);
+            white-space: normal;
+            text-align: center;
+            text-transform: uppercase;
+            font: {
+                family: $cervo-medium;
+                size: rem(20);
+            }
+            content: attr(data-line);
+        }
+        
+        &:hover {
+            &:after {
+                left: 0;
+                opacity: 1;
+            }
+        }
+    }
+    
+    .price {
+        @extend %flex;
+        @extend %flex-space-between;
+        padding-bottom: 4px;
+        font: {
+            family: $cervo-medium;
+            size: rem(20);
+        }
+        
+        &--linethrough {
+            text-decoration: line-through;
+        }
+        
+        span {
+            white-space: nowrap;
+        }
+        
+        &:last-of-type {
+            margin-bottom: 20px;
+        }
+    }
+    
+    .title {
+        margin-bottom: 2px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        font: {
+            family: $cervo-medium;
+            size: rem(25);
+        }
+    }
+}
