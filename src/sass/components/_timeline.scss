@@ -1,5 +1,5 @@
 .c-timeline {
-
+    
     .swiper-wrapper {
         @extend %rel;
         @extend %flex;
@@ -21,7 +21,20 @@
         //margin-right: 40px;
         background-color: white;
         border: 1px solid $c-blue1;
-        padding: 20px 30px;
+        padding: get-vw-base(20) get-vw-base(30);
+        
+        @media screen and ( min-width: $base + 1px ) {
+            padding: 20px 30px;
+        }
+        
+        @media screen and ( min-width: $tablet + 1px ) {
+            padding: get-vw-base(20) get-vw-base(30);
+        }
+        
+        @media screen and ( max-width: $smartphone + px ) {
+            padding: 20px;
+            max-width: 180px;
+        }
         
         &:nth-child(even) {
             margin-top: 65px;
@@ -40,9 +53,19 @@
                 font-size: rem(114);
             }
             
+            @media screen and ( max-width: $tablet + px ) {
+                font-size: get-vw-tablet(100);
+            }
+            
+            @media screen and ( max-width: $tablet_portrait + px ) {
+                font-size: get-vw-tablet_portrait(114);
+            }
+            
             @media screen and ( min-width: $withnarrow + 1px ) {
                 //font-size: rem(114);
             }
+            
+            
             
         }
         

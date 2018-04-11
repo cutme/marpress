@@ -3,6 +3,10 @@
     margin-bottom: get-vw-project(90);
     color: white;
     
+    @media screen and ( max-width: $tablet + px ) {
+        margin-bottom: 60px;
+    }
+    
     img {
         @extend %rel;
     }
@@ -13,18 +17,22 @@
     
     &__header {
         @extend %abs;
-        left: get-vw-project(80);
-        bottom: get-vw-project(60);
+        left: get-vw-base(80);
+        bottom: get-vw-base(60);
         line-height: 1;
         text-transform: uppercase;
         font: {
             family: $cervo-medium;
-            size: get-vw-project(115);
+            size: get-vw-base(115);
         }
 
         @media screen and ( min-width: $base + 1px ) {
             left: 80px; bottom: 60px;
             font-size: 115px;
+        }
+        
+        @media screen and ( max-width: $tablet + px ) {
+            left: 50px;
         }
     }
     

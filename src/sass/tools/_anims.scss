@@ -32,9 +32,23 @@
     }
 
     100% {
-        //display: block;
         opacity: 1;
-       // transform: translateY(0);
+    }
+}
+
+
+
+@keyframes pulse {
+    0%   {
+        background: white;
+    }
+
+    50% {
+        background: #efefef;
+    }
+    
+    100% {
+        background: white;
     }
 }
 

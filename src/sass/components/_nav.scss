@@ -1,7 +1,10 @@
 .c-nav {
     @extend %anim--slow;
     margin-bottom: 45px;
-   // animation: fadeInFromNone 1s forwards;
+    
+    @media screen and ( max-width: $tablet + px ) {
+        text-align: center;
+    }
 
     li {
         margin-bottom: 20px;
@@ -30,11 +33,15 @@
         }
         
         &:hover {
-            padding-left: 50px;
-            
-            &:before {
-                width: 40px;
-                opacity: 1;
+            .desktop & {
+                @media screen and ( min-width: $tablet + 1px ) {
+                    padding-left: 50px;
+                
+                    &:before {
+                        width: 40px;
+                        opacity: 1;
+                    }
+                }
             }
         }
     }

@@ -12,5 +12,32 @@
         &:last-child {
             margin-right: 0;
         }
+        
+        @media screen and ( max-width: $tablet_portrait + px ) {
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: 50%;
+                margin-right: 0;         
+            }
+            
+            &:nth-child(3) {
+                width: 100%;
+            }
+        }        
+        
+        @media screen and ( max-width: $smartphone + px ) {
+            width: 100% !important;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    }
+    
+    a {
+        @extend %anim;
+
+        &:hover {
+            border-bottom: 1px solid $c-blue1;
+        }
     }
 }
+

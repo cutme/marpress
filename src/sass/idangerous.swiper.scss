@@ -1,78 +1,79 @@
-/*
- * Swiper - Mobile Touch Slider CSS
- * http://www.idangero.us/sliders/swiper
+/**
+ * Swiper 4.2.2
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * http://www.idangero.us/swiper/
  *
- * Vladimir Kharlampidi, The iDangero.us
- * http://www.idangero.us/
- * 
- * Copyright 2012-2013, Vladimir Kharlampidi
- * The iDangero.us
- * http://www.idangero.us
+ * Copyright 2014-2018 Vladimir Kharlampidi
  *
- * Licensed under GPL & MIT
+ * Released under the MIT License
  *
-*/
-
-/* ===============================================================
-Basic Swiper Styles 
-================================================================*/
+ * Released on: April 1, 2018
+ */
 .swiper-container {
-	margin:0 auto;
-	position:relative;
-	overflow:hidden;
-	-webkit-backface-visibility:hidden;
-	-moz-backface-visibility:hidden;
-	-ms-backface-visibility:hidden;
-	-o-backface-visibility:hidden;
-	backface-visibility:hidden;
-	/* Fix of Webkit flickering */
-	z-index:1;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  /* Fix of Webkit flickering */
+  z-index: 1;
+}
+.swiper-container-no-flexbox .swiper-slide {
+  float: left;
+}
+.swiper-container-vertical > .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 .swiper-wrapper {
-	position:relative;
-	width:100%;
-	-webkit-transition-property:-webkit-transform, left, top;
-	-webkit-transition-duration:0s;
-	-webkit-transform:translate3d(0px,0,0);
-	-webkit-transition-timing-function:ease;
-	
-	-moz-transition-property:-moz-transform, left, top;
-	-moz-transition-duration:0s;
-	-moz-transform:translate3d(0px,0,0);
-	-moz-transition-timing-function:ease;
-	
-	-o-transition-property:-o-transform, left, top;
-	-o-transition-duration:0s;
-	-o-transform:translate3d(0px,0,0);
-	-o-transition-timing-function:ease;
-	-o-transform:translate(0px,0px);
-	
-	-ms-transition-property:-ms-transform, left, top;
-	-ms-transition-duration:0s;
-	-ms-transform:translate3d(0px,0,0);
-	-ms-transition-timing-function:ease;
-	
-	transition-property:transform, left, top;
-	transition-duration:0s;
-	transform:translate3d(0px,0,0);
-	transition-timing-function:ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
-.swiper-free-mode > .swiper-wrapper {
-	-webkit-transition-timing-function: ease-out;
-	-moz-transition-timing-function: ease-out;
-	-ms-transition-timing-function: ease-out;
-	-o-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-	margin: 0 auto;
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+}
+.swiper-container-multirow > .swiper-wrapper {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.swiper-container-free-mode > .swiper-wrapper {
+  -webkit-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  margin: 0 auto;
 }
 .swiper-slide {
-	float: left;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
 }
-
-/* IE10 Windows Phone 8 Fixes */
-.swiper-wp8-horizontal {
-	-ms-touch-action: pan-y;
-}
-.swiper-wp8-vertical {
-	-ms-touch-action: pan-x;
+.swiper-invisible-blank-slide {
+  visibility: hidden;
 }

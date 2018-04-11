@@ -4,10 +4,20 @@
     
     &__col {
         width: 40%;
-        padding: 0 20px;                
+        padding: 0 get-vw-base(20);
+        
+        @media screen and ( min-width: $base + 1px ) {
+            padding: 0 20px;
+        }
+        
+        @media screen and ( max-width: 1600px ) {
+            width: 100%;
+        }              
 
         &--narrow {
-            width: 20%;
+            @media screen and ( min-width: 1601px ) {
+                width: 20%;
+            }
         }
         
         .c-address {
@@ -17,14 +27,22 @@
             }
             
             address {
-                width: 50%;
+                
                 padding: 0 20px;
+                
+                @media screen and ( min-width: 1601px ) {
+                    width: 50%;
+                }
+                
+                p {
+                    white-space: nowrap;
+                }
             }
             
             .o-header {
                 padding: 0 20px;
             }
-        }
+        }        
     }
     
     &__more {
@@ -43,9 +61,18 @@
         
     .links {
         padding: 0 20px;
+        
+        @media screen and ( max-width: 1600px ) {
+            display: flex;
+            flex-wrap: wrap;
+        }
     
         li {
             margin-bottom: 10px;
+            
+            @media screen and ( max-width: 1600px ) {
+                padding-right: 20px;
+            }
         }
 
         a {

@@ -1,0 +1,20 @@
+.c-navtrigger {
+    @extend %abs;
+    @extend %anim;
+    @extend %flex;
+    @extend %flex-xy;
+    right: -38px; top: 20px;
+    width: 38px; height: 38px;
+    background-color: $c-blue2;
+    font-size: rem(20);
+    cursor: pointer;
+    
+    @media screen and ( min-width: $tablet + 1px ) {
+        display: none;
+    }
+    
+    
+    &.icon-close {
+        right: 20px;
+    }
+}

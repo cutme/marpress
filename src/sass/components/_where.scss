@@ -8,7 +8,11 @@
     .o-section {
         @extend %rel;
         border: 1px solid $c-blue1;
-        padding: 75px 40px 40px 40px;
+        padding: 75px get-vw-base(40) 40px get-vw-base(40);
+        
+        @media screen and ( min-width: $base + 1px ) {
+            padding: 75px 40px 40px 40px;
+        }
     }
     
     .o-section {

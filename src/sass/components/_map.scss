@@ -1,3 +1,6 @@
 .c-map {
+    @extend %rel;
     margin-bottom: 70px;
+    height: 434px;
+    animation: pulse 1s infinite;
 }

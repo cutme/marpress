@@ -17,6 +17,11 @@
         @extend %flex;
         @extend %flex-wrap;
         margin-bottom: 70px;
+        
+        @media screen and ( max-width: $tablet + px ) {
+            justify-content: center;
+        }
+        
 
         li {
             @extend %anim;

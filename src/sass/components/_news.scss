@@ -2,18 +2,34 @@
     margin-bottom: 115px;
 
     &__items {
-        @extend %flex;
+        @media screen and ( min-width: $smartphone + 1px ) {
+            display: flex;
+        }
         
         li {
-            @extend %flex;
-            @extend %flex-space-between;
-            flex-direction: column;
-            max-width: 320px;
-            margin-right: grid(80, 1040);
+            //@extend %flex;
+            //@extend %flex-space-between;
             
-            &:last-child {
-                margin-right: 0;
+            max-width: 320px;
+            
+            
+            
+            
+            @media screen and ( min-width: $smartphone + 1px ) {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                margin-right: grid(80, 1040);
+                
+                &:last-child {
+                    margin-right: 0;
+                }
             }
+            
+            @media screen and ( max-width: $smartphone + px ) {
+                margin: 0 auto 60px auto;
+            }
+            
         }
     }
     

@@ -13,6 +13,10 @@
     @media screen and ( min-width: $base + 1px ) {
         margin-bottom: 90px;
     }
+    
+    @media screen and ( max-width: $tablet + px ) {
+        margin-bottom: 60px;
+    }
 
     .o-header {
         &--small {
@@ -23,6 +27,11 @@
     }
     
     .c-gallery {
+        
+        @media screen and ( max-width: $tablet + px ) {
+            justify-content: center;
+        }
+        
         figure {
             .photo {    
                 &--image {
@@ -43,5 +52,9 @@
                 }
             }
         }
+    }
+    
+    .icon-feather {
+        font-size: rem(100) !important;
     }
 }

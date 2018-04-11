@@ -9,6 +9,10 @@
         padding: 0 80px;
     }
     
+    @media screen and ( max-width: $tablet + px ) {
+        padding: 0 50px;
+    }
+    
     &--wide {
         max-width: 1280px;
 

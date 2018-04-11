@@ -4,9 +4,12 @@
 (function() {
 
     'use strict';
+    
+    const aside = document.getElementById('aside'),
+          trigger = document.getElementsByClassName('js-navtrigger')[0];
 
 	const scrollTo = function (target, speed) {
-		let offset = -70;
+		let offset = -50;
 
 		TweenLite.to(window, speed, {
 			scrollTo: {
@@ -29,8 +32,19 @@
 	var clickAction = function(e) {
 	
 	    const that = e.currentTarget;
-
-	    document.body.classList.add('menu-hidden');
+	    let pause = 1000;
+	    
+	    if (window.innerWidth <= 1024) {
+            pause = 300;
+            
+	    } else {
+    	    document.body.classList.add('menu-hidden');
+	    }
+	    
+	    aside.classList.remove('is-visible');
+        trigger.classList.add('icon-navicon');
+        trigger.classList.remove('icon-close');
+        document.body.classList.remove('no-overflow');
 	    
 	    setTimeout(function() {
 
@@ -54,7 +68,7 @@
     	    
     
             
-	    }, 1000);
+	    }, pause);
 
         
         if (window.e) {
@@ -91,6 +105,21 @@
 
 (function() {
 	
+	const aside = document.getElementById('aside'),
+          trigger = document.getElementsByClassName('js-navtrigger')[0];
+    
+    
+    const action = function(e) {          
+        aside.classList.toggle('is-visible');
+        trigger.classList.toggle('icon-navicon');
+        trigger.classList.toggle('icon-close');
+        document.body.classList.toggle('no-overflow');
+
+        e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
+    }
+    
+    
+    trigger.addEventListener('click', action);
 	
 
 }).call(this);
@@ -103,16 +132,32 @@
     var windowPos = (window.pageYOffset || window.scrollY),
         body = document.body,
         showFull = document.getElementsByClassName('js-fullmenu')[0],
-        aside = document.getElementById('aside');
+        aside = document.getElementById('aside'),
+        status = 'desktop';
 
 	function init() {
 
        windowPos = (window.pageYOffset || window.scrollY);
        
-       if (windowPos > 100) {
-           body.classList.add('menu-hidden');
+       
+       
+       if (window.innerWidth <= 1024) {
+           if (status === 'desktop') {               
+               body.classList.remove('menu-hidden');
+               status = 'mobile';
+           }
        } else {
-           body.classList.remove('menu-hidden');           
+           if (status === 'mobile') {
+               status = 'desktop';
+               
+               
+           }
+           
+           if (windowPos > 100) {
+               body.classList.add('menu-hidden');
+           } else {
+               body.classList.remove('menu-hidden');           
+           }
        }
 	}
 

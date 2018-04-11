@@ -47,6 +47,7 @@
     "dependencies": {
         "form-serialize": "^0.7.2",
         "gsap": "^1.20.3",
+        "load-google-maps-api": "^1.2.1",
         "swiper": "^4.2.2"
     },
     "browserslist": [

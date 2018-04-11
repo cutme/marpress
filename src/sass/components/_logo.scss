@@ -4,18 +4,16 @@
         height: 150px;
         margin-bottom: 55px;
         
-        .menu-hidden & {
-           // display: none;
+        @media screen and ( max-width: $tablet + px ) {
+            margin: {
+                left: auto;
+                right: auto;
+            }
         }
     }
     
     &__single {
         width: 50px;
         margin: 0 auto 45px auto;
-        
-        .menu-hidden & {
-            //display: block;
-            //animation: fadeInFromNone 1s forwards;
-        }
     }
 }

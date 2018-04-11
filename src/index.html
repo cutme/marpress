@@ -2,60 +2,65 @@
 <html lang="pl-PL">
 <%= require('html-loader!./includes/head.html') %>
 
-<body style="overflow: hidden" itemscope="itemscope" itemtype="https://schema.org/WebPage" class="menu-hidden-">
+<body style="overflow: hidden" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 
 <div style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 120; background-color: white; background-repeat: no-repeat; background-position: center; background-size: 80px" id="cover"></div>
 
 	<div itemprop="mainContentOfPage" role="main" class="o-container">
         
         <aside class="c-aside js-aside" id="aside">
+            <i class="c-navtrigger icon-navicon js-navtrigger"></i>
+        
             <div class="c-aside__menu">
                 <div class="c-aside__full">
-                    <div class="c-logo">
-                        <div class="c-logo__full">
-                            <img src=<%= require("./img/logo-marpress.svg") %> width="160" height="150" alt="Marpress">
-                        </div>
-                    </div>
-
-                    <nav class="c-nav">
-                        <ul>
-                            <li>
-                                <a href="#about" class="js-goto">O nas</a>
-                            </li>
-                            
-                            <li>
-                                <a href="#books" class="js-goto">Książki</a>
-                            </li>
-                            
-                            <li>
-                                <a href="#authors" class="js-goto">Autorzy</a>
-                            </li>
-                            
-                            <li>
-                                <a href="#news" class="js-goto">Wydarzenia</a>
-                            </li>
-    
-                            <li>
-                                <a href="#where" class="js-goto">Gdzie kupić</a>
-                            </li>
-                            
-                            <li>
-                                <a href="#contact" class="js-goto">Kontakt</a>
-                            </li>
-                        </ul>
-                    </nav>
                     
-                    <nav class="c-social">
-                        <ul>
-                            <li>
-                                <a href="#" class="icon-facebook"></a>
-                            </li>
-                            
-                            <li>
-                                <a href="#" class="icon-instagram"></a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div>
+                        <div class="c-logo">
+                            <div class="c-logo__full">
+                                <img src=<%= require("./img/logo-marpress.svg") %> width="160" height="150" alt="Marpress">
+                            </div>
+                        </div>
+    
+                        <nav class="c-nav">
+                            <ul>
+                                <li>
+                                    <a href="#about" class="js-goto">O nas</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#books" class="js-goto">Książki</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#authors" class="js-goto">Autorzy</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#news" class="js-goto">Wydarzenia</a>
+                                </li>
+        
+                                <li>
+                                    <a href="#where" class="js-goto">Gdzie kupić</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#contact" class="js-goto">Kontakt</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        
+                        <nav class="c-social">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon-facebook"></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" class="icon-instagram"></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
                 
                 <div class="c-aside__narrow">
@@ -113,17 +118,17 @@
                         
                         <div class="c-about__intro anim anim--up">
                             <p>
-    While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need.
+Zmieniamy styl i formę komunikacji. niezmienna pozostaje potrzeba tworzenia dobrej literatury. Nowe logo i szata graficzna to wstęp do kolejnego rozdziału historii wydawnictwa. Przed nami ambitne plany wydawnicze, odkrywanie nowych talentów literackich a przede wszystkim dbanie o dorobek autorów i żywy kontakt z czytelnikami. Wyrusz z nami w tę podróż!
                             </p>
                         </div>
                         
                         <div class="c-article c-article--columns anim anim--up">
                             <p>
-What began as a simple idea has evolved inteducation and economic opportunity for children and their communities around the world. While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need. 
+Nasza przemiana zaczyna się we wrześniu 2017 roku kiedy to jeden z recenzentów i przyjaciół zespołu, na codzień pracownik korporacji, postanawia przyjąć zaproszenie do współpracy nad odnową wydawnictwa. Dzisiaj wraz z drużyną, której trzonem są zarówno osoby od wielu lat tworzące i pracujące w tej firmie, jak i młodzi redaktorzy i graficy zaczynamy nową przygodę w świecie wydawniczym.
                             </p>
                             
                             <p>
-What began as a simple idea has evolved inteducation and economic opportunity for children and their communities around the world. While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the hardships faced by children growing up without shoes. Wanting to help, he created TOMS Shoes, a company that would match every pair of shoes purchased with a new pair of shoes for a child in need. 
+Naszym celem pozostaje publikowanie najwyższej jakości literatury związanej z Trójmiastem, regionem i morzem, w szczególności Morzem Bałtyckim. Chcemy pokazywać, że Polska to kraj o fascynującej historii i wielowiekowej tradycji morskiej. Od prawie trzydziestu lat dbamy o spuściznę literacką naszych autorów, odkrywamy też tych zapomnianych i niedocenianych. Bo wierzymy, że książki przybliżają ludzi i środowiska. Jednym zdaniem - książką skracamy dystans. 
                             </p>
                         </div>                        
                     </section>
@@ -240,7 +245,7 @@ What began as a simple idea has evolved inteducation and economic opportunity fo
                                 </figure>
                             </div>
                             
-                            <a href="#" class="c-gallery__item">
+                            <a href="mailto:redakcja@marpress.pl" class="c-gallery__item">
                                 <figure>
                                     <div class="photo photo--image">
                                          <i class="icon-avatar"></i>
@@ -692,15 +697,15 @@ While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the 
                                         </figure>
                                     </div>
                                     
-                                    <a href="#" class="c-gallery__item anim anim--up">
+                                    <a href="mailto:redakcja@marpress.pl" class="c-gallery__item anim anim--up">
                                         <figure>
                                             <div class="photo photo--image">
-                                                 <i class="icon-avatar"></i>
+                                                 <i class="icon-feather"></i>
                                             </div>
                                             
                                             <figcaption>
-                                                <p class="name">Dołącz do nas</p>
-                                                <p>Aplikuj o pracę!</p>
+                                                <p class="name">Zostań autorem</p>
+                                                <p>Wydaj z nami książkę</p>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -754,15 +759,15 @@ While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the 
                                         </figure>
                                     </div>
                                     
-                                    <a href="#" class="c-gallery__item anim anim--up">
+                                    <a href="mailto:redakcja@marpress.pl" class="c-gallery__item anim anim--up">
                                         <figure>
                                             <div class="photo photo--image">
-                                                 <i class="icon-avatar"></i>
+                                                 <i class="icon-feather"></i>
                                             </div>
                                             
                                             <figcaption>
-                                                <p class="name">Dołącz do nas</p>
-                                                <p>Aplikuj o pracę!</p>
+                                                <p class="name">Zostań autorem</p>
+                                                <p>Wydaj z nami książkę</p>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -801,15 +806,15 @@ While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the 
                                         </figure>
                                     </div>
                                     
-                                    <a href="#" class="c-gallery__item anim anim--up">
+                                    <a href="mailto:redakcja@marpress.pl" class="c-gallery__item anim anim--up">
                                         <figure>
                                             <div class="photo photo--image">
-                                                 <i class="icon-avatar"></i>
+                                                 <i class="icon-feather"></i>
                                             </div>
                                             
                                             <figcaption>
-                                                <p class="name">Dołącz do nas</p>
-                                                <p>Aplikuj o pracę!</p>
+                                                <p class="name">Zostań autorem</p>
+                                                <p>Wydaj z nami książkę</p>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -848,15 +853,15 @@ While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the 
                                         </figure>
                                     </div>
                                     
-                                    <a href="#" class="c-gallery__item anim anim--up">
+                                    <a href="mailto:redakcja@marpress.pl" class="c-gallery__item anim anim--up">
                                         <figure>
                                             <div class="photo photo--image">
-                                                 <i class="icon-avatar"></i>
+                                                 <i class="icon-feather"></i>
                                             </div>
                                             
                                             <figcaption>
-                                                <p class="name">Dołącz do nas</p>
-                                                <p>Aplikuj o pracę!</p>
+                                                <p class="name">Zostań autorem</p>
+                                                <p>Wydaj z nami książkę</p>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -1130,8 +1135,12 @@ While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the 
                 
                 
                     <section class="o-section">
-                        <div class="c-map">
-                            <img src=<%= require("./img/assets/map.png") %> alt="map" width="1120" height="434">
+                        <div class="c-map js-map" data-lat="54.3526288" data-lng="18.6573301">
+                         
+    
+                            
+                        
+<!--                             <img src=<%= require("./img/assets/map.png") %> alt="map" width="1120" height="434"> -->
                         </div>
                     </section>
                 </div>
@@ -1174,19 +1183,19 @@ While traveling in Argentina in 2006, TOMS Founder Blake Mycoskie witnessed the 
                                     <address>
                                         <p><strong>Redakcja</strong></p>
                                         <p>tel. (0 58) 301-47-00</p>
-                                        <p>e-mail: red@marpress.x.pl</p>
+                                        <p>e-mail: <a href="mailto:red@marpress.x.pl">red@marpress.x.pl</a></p>
                                     </address>
                                     
                                     <address>
                                         <p><strong>Sprzedaż</strong></p>
                                         <p>tel. (0 58) 301-47-00</p>
-                                        <p>e-mail: red@marpress.x.pl</p>
+                                        <p>e-mail: <a href="mailto:red@marpress.x.pl">red@marpress.x.pl</a></p>
                                     </address>
                                     
                                     <address>
                                         <p><strong>Księgarnia</strong></p>
                                         <p>tel. (0 58) 301-47-00</p>
-                                        <p>e-mail: red@marpress.x.pl</p>
+                                        <p>e-mail: <a href="mailto:red@marpress.x.pl">red@marpress.x.pl</a></p>
                                     </address>
                                 </div>
                             </li>

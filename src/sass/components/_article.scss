@@ -6,11 +6,15 @@
     }
     
     &--columns {
-        column-count: 2;
-        column-gap: 40px;
+        @media screen and ( min-width: $smartphone + 1px ) {
+            column-count: 2;
+            column-gap: 40px;
+        }
     }
     
     &--half {
-        width: 50%;
+        @media screen and ( min-width: $tablet_portrait + 1px ) {
+            width: 50%;
+        }        
     }
 }

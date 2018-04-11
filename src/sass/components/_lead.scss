@@ -4,7 +4,7 @@
     @extend %flex-space-between;
     @extend %flex-y;
     width: 100%;
-    padding: get-vw-project(60) get-vw-project(80);
+    padding: get-vw-base(60) get-vw-base(80);
     text-transform: uppercase;
     font: {
         family: $cervo-medium;
@@ -13,11 +13,24 @@
     letter-spacing: 2px;
     line-height: 1;
     
-    @media screen and ( min-width: 1681px ) {
+    
+    
+    @media screen and ( min-width: $base + 1px ) {
         width: 1200px;
         padding: 60px 80px;
     }
     
+    @media screen and ( max-width: $tablet + px ) {
+        padding: {
+            left: 50px;
+            right: 50px;
+        }
+    }
+    
+    @media screen and ( max-width: $smartphone + px ) {
+        font-size: rem(14);
+        letter-spacing: 1px;
+    }
     
     &__line {
         @extend %rel;

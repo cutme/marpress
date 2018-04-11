@@ -5,6 +5,8 @@ const HappyPack = require('happypack');
 const HtmlWebpackInlineAssetsPlugin = require('html-webpack-inline-assets-plugin');
 const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 
+ 
+
 /*
 
 const isProd = process.env.NODE_ENV === 'production'; //true or false
